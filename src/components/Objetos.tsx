@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react"
 
-interface sub {
+interface Sub {
   nick: string,
   subMoths: number,
   avatar: string,
   description?: string
 }
 
-const USERS = [{
+// otra forma de anidar interfases
+interface Appstate  {
+  subs:  Array<Sub>
+  //subs:  Sub[]
+}
+
+const USERS:Sub[] = [{
   nick: 'dapeli',
   subMoths: 3,
   avatar: 'https://i.pravatar.cc/300',
@@ -21,7 +27,7 @@ const USERS = [{
 }]
 
 const Objetos = () => {
-  const [subs, setSubs] = useState<Array<sub>>([])
+  const [subs, setSubs] = useState<Appstate["subs"]>([]) // <Sub[]> otro modo de declararlo // <Array<Sub>>
   useEffect(() =>{
     setSubs(USERS)
   },[])
