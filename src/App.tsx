@@ -2,14 +2,15 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
-import Number from './components/Number'
+//import Number from './components/Number'
+import Objetos from './components/Objetos'
 
 function App() {
   //const [count, setCount] = useState(0)
 
   return (
     <>
-      <Number />
+      <Objetos />
     </>
   )
 }
