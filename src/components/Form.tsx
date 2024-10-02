@@ -9,7 +9,7 @@ const Form = () => {
         avatar: "",
         description: ""
     })
-
+console.log(inputValue)
     const handleSubmit = () => { }
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {

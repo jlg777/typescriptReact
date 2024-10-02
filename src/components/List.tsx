@@ -15,10 +15,11 @@ const List = ({ subs }: Props) => {
                 {subs.map((sub) => {
                     return (
                         <>
-                            <li key={sub.nick}>{sub.nick}</li>
-                            <img src={sub.avatar} alt="" />
-                            <p>Suscrito ({sub.subMoths})</p>
-                            <h3>{sub.description}</h3>
+                            <li key={sub.nick}>{sub.nick}
+                                <img src={sub.avatar} alt="" />
+                                <p>Suscrito ({sub.subMoths})</p>
+                                <h3>{sub.description}</h3>
+                            </li>
                         </>
                     )
                 })}
