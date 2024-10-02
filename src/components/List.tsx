@@ -1,13 +1,5 @@
-type Sub = {
-    nick: string,
-    subMoths: number,
-    avatar: string,
-    description?: string
-}
+import {Props} from '../../definitions'
 
-type Props = {
-    subs: Sub[]; // subs es un array de objetos Sub
-};
 const List = ({ subs }: Props) => {
     return (
         <>
