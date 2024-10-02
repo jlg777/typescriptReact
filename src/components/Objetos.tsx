@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import List from "./List"
+import Form from "./Form"
 
 interface Sub {
   nick: string,
@@ -36,6 +37,7 @@ const Objetos = () => {
     <>
       <h1>Subs</h1>
       <List subs={subs}/>
+      <Form />
     </>
   )
 }
