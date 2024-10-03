@@ -7,15 +7,24 @@ interface FormState{
     inputValue:Sub
 }
 
-const Form = () => {
+interface FormProps {
+    onNewSub: React.Dispatch<React.SetStateAction<Sub[]>>
+}
+
+const Form = ({onNewSub}:FormProps) => {
     const [inputValue, setInputValue] = useState<FormState['inputValue']>({
         nick: "",
         subMoths: 0,
         avatar: "",
         description: ""
     })
-console.log(inputValue)
-    const handleSubmit = () => { }
+
+//console.log(inputValue)
+
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        onNewSub(subs => ([...subs, inputValue]))
+    }
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) => {
         setInputValue({ ...inputValue, [e.target.name]: e.target.value })
