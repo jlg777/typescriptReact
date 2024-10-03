@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react"
+import List from "./List"
+import Form from "./Form"
+import {Sub} from '../../definitions'
 
-interface Sub {
+
+/*interface Sub {
   nick: string,
   subMoths: number,
   avatar: string,
   description?: string
-}
+}*/
 
 // otra forma de anidar interfases
 interface Appstate  {
@@ -34,17 +38,8 @@ const Objetos = () => {
   return (
     <>
       <h1>Subs</h1>
-      <ul>
-        {subs.map((sub) => {
-          return (
-            <>
-              <li key={sub.nick}>{sub.nick}</li>
-              <img src={sub.avatar} alt="" />
-              <h3>{sub.description}</h3>
-            </>
-          )
-        })}
-      </ul>
+      <List subs={subs}/>
+      <Form onNewSub={setSubs}/>
     </>
   )
 }
